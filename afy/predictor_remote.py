@@ -28,7 +28,7 @@ class PredictorRemote:
         if not self.check_connection():
             self.socket.disconnect(self.address)
             # TODO: this hangs, as well as context.__del__
-            # self.context.destroy()
+             self.context.destroy()
             raise ConnectionError(f"Could not connect to {worker_host}:{worker_port}")
 
         log(f"Connected to {self.address}")
